@@ -3,6 +3,9 @@ package if_else_switch.high_level;
 import if_else_switch.low_level.GenderFactoryImpl;
 import if_else_switch.low_level.MaleGender;
 
+/**
+ * @see <a href="http://blog.cleancoder.com/uncle-bob/2021/03/06/ifElseSwitch.html">if-else-switch</a>
+ */
 public class Test {
     public void test() {
         GenderFactory genderFactory = new GenderFactoryImpl();
