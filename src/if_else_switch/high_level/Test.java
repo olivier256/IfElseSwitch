@@ -3,32 +3,25 @@ package if_else_switch.high_level;
 import if_else_switch.low_level.GenderFactoryImpl;
 import if_else_switch.low_level.MaleGender;
 
-public class Main {
-    GenderFactory genderFactory;
-    Gender gender;
-
-    public Main() {
-        genderFactory = new GenderFactoryImpl();
-    }
-
-    public void run() {
-        gender = genderFactory.make(0);
-    }
-
-    public Gender getGender() {
-        return gender;
+public class Test {
+    public void test() {
+        GenderFactory genderFactory = new GenderFactoryImpl();
+        Gender gender = genderFactory.make(0);
+        assert gender instanceof MaleGender;
+        assert "male".equals(gender.getLabel());
     }
 
     public static void main(String[] args) {
-        boolean aeEnabled = false;
-        assert aeEnabled = true;
-        if (!aeEnabled) {
+        checkEAEnabled();
+
+        new Test().test();
+    }
+
+    private static void checkEAEnabled() {
+        boolean eaEnabled = false;
+        assert eaEnabled = true;
+        if (!eaEnabled) {
             throw new AssertionError("launch with VM argument '-ea'");
         }
-
-        Main main = new Main();
-        main.run();
-        Gender gender = main.getGender();
-        assert gender instanceof MaleGender;
     }
 }
